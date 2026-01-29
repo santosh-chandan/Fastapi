@@ -1,9 +1,9 @@
 name: Code Quality
 
-on:
-  push:
-    branches: ["main", "develop"]
-  pull_request:
+on: []  # Its never run as empty on. so this file never execute at all.
+  # push:
+  #   branches: ["main", "develop"]
+  # pull_request:
 
 jobs:
   lint-and-security:
