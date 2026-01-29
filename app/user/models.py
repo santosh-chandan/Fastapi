@@ -2,6 +2,7 @@
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import Integer, String
 from app.core.engine_psgl import Base
+from app.blog.models import Post
 
 class User(Base):
     __tablename__ = 'users'
