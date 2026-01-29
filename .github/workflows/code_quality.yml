@@ -32,11 +32,11 @@ jobs:
 
       # Linting with ruff
       - name: Lint Python code
-        run: ruff check .
+        run: uv run ruff check .
 
       # Type checking with mypy
       - name: Type check
-        run: mypy .
+        run: uv run mypy .
 
       # Security check with safety
       - name: Security scan
