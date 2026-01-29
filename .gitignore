@@ -3,11 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# uv / virtualenv / envs
+# Environment files
 .env
-.venv/
 .envrc
-uv.lock
+
+# Virtual environments (uv / venv)
+.venv/
 
 # Logs
 *.log
@@ -16,7 +17,7 @@ uv.lock
 logs/
 *.log.*
 
-# Pytest / coverage
+# Test / coverage artifacts
 htmlcov/
 .coverage
 .cache/
@@ -40,7 +41,7 @@ docker-compose.override.yml
 .DS_Store
 Thumbs.db
 
-# PyInstaller
+# Build artifacts
 dist/
 build/
 *.spec
@@ -48,5 +49,5 @@ build/
 # Jupyter
 .ipynb_checkpoints
 
-# VSCode Python extension
+# Python version managers
 .python-version
