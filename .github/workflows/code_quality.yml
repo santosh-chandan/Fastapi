@@ -1,0 +1,45 @@
+name: Code Quality
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+
+jobs:
+  lint-and-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Install uv
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      # Install dev dependencies
+      - name: Install dependencies
+        run: uv sync --group dev --frozen
+
+      # Linting with ruff
+      - name: Lint Python code
+        run: ruff check .
+
+      # Type checking with mypy
+      - name: Type check
+        run: mypy .
+
+      # Security check with safety
+      - name: Security scan
+        run: |
+          pip install safety
+          safety check --full-report
