@@ -1,7 +1,7 @@
-from app.blog.models import Post, PostImage
+from app.blog.models import Post
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
-from app.blog.schemas import CreatePost, SendPost
+from app.blog.schemas import CreatePost
 from app.user.models import User
 from app.core.exceptions import exceptions
 
@@ -70,9 +70,9 @@ class PostService():
         query.limit(limit + 1)
 
         result = await db.execute(query)
-        post = result.scalars().all()
+        posts = result.scalars().all()
 
-        has_more = len(post) > limit
+        has_more = len(posts) > limit
         if has_more:
             posts = posts[:-1]
 

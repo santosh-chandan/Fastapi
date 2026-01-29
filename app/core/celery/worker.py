@@ -1,11 +1,9 @@
-from app.core.celery.celery_app import celery_app
 
 # Celery discovers tasks by:
 # Importing modules
 # Registering @celery_app.task
 # If the module is never imported, the task does not exist.
 # so just import as module only - it will explore all tasks and register.
-import app.core.celery.tasks
 
 # this worker will run only this way
     # celery -A app.core.celery.worker worker --loglevel=info

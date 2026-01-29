@@ -5,9 +5,6 @@ from sqlalchemy import pool
 
 from app.core.config import PG_SYNCH_DB_URL 	# 👈 import DATABASE_URL
 from app.core.engine_psgl import Base  			# 👈 import Base
-from app.user.models import User  			    # 👈 import User
-from app.blog.models import Post, PostImage  	# 👈 import Post
-from app.chat.models import DocumentChunks      # 👈 import DocumentChunks
 from alembic import context
 
 

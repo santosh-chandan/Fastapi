@@ -1,5 +1,5 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.core.engine_psgl import get_db, async_sessionmaker
+from app.core.engine_psgl import async_sessionmaker
 from app.chat.models import DocumentChunks
 
 class IngestionService():

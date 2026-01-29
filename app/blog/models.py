@@ -1,7 +1,7 @@
 from app.core.engine_psgl import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, Text, ForeignKey, DateTime
-from datetime import datetime, DateTime
+from datetime import datetime
 
 
 class Post(Base):

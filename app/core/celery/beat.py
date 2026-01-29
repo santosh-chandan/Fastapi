@@ -1,5 +1,4 @@
 from app.core.celery.celery_app import celery_app
-from celery.schedules import crontab
 
 celery_app.conf.beat_schedule = {
     "scan-pdf-every-1minute": {
